@@ -318,9 +318,9 @@ func checkCSRFToken(token string) bool {
 }
 
 var oauthCfg = &oauth2.Config{
-	ClientID:     "606479880714-v36tg6qtn9alsinbvfb0qtmvjdkunq4c.apps.googleusercontent.com",
-	ClientSecret: "ySBC6T-F31ez3qsA3lnNRvtr",
-	RedirectURL:  "http://localhost:8080/oauth2callback",
+	ClientID:     "353123246755-qcpiamn8dkcs7888po2ubs898alo9p1e.apps.googleusercontent.com",
+	ClientSecret: "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",
+	RedirectURL:  "http://invoicer-api.eba-ynpwfgh9.us-east-1.elasticbeanstalk.com/oauth2callback",
 	Scopes:       []string{"https://www.googleapis.com/auth/userinfo.profile"},
 	Endpoint: oauth2.Endpoint{
 		AuthURL:  "https://accounts.google.com/o/oauth2/auth",
