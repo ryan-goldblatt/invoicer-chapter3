@@ -35,6 +35,7 @@ function getInvoice(invoiceid, CSRFToken) {
         beforeSend: function (request)
         {
             request.setRequestHeader("X-CSRF-Token", CSRFToken);
+            request.setRequestHeader("X-Content-Type-Options", "nosniff");
         },
         error: function (xhr, ajaxOptions, thrownError) {
             if(xhr.status==404) {
