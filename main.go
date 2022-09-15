@@ -1,4 +1,4 @@
-// This Source Code Form is subject to the terms of the Mozilla Public
+//der This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //
@@ -133,6 +133,7 @@ func (iv *invoicer) getInvoice(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Add("Content-Type", "application/json")
 	w.Header().Add("Access-Control-Allow-Origin", "*")
+        w.Header().Add("X-Content-Type-Options", "nosniff")
 	w.WriteHeader(http.StatusOK)
 	w.Write(jsonInvoice)
 }
@@ -209,6 +210,7 @@ func (iv *invoicer) deleteInvoice(w http.ResponseWriter, r *http.Request) {
 func (iv *invoicer) getIndex(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Security-Policy", "default-src 'self';")
 	w.Header().Add("X-Frame-Options", "SAMEORIGIN")
+        w.Header().Add("X-Content-Type-Options", "nosniff")
 	w.Write([]byte(`
 <!DOCTYPE html>
 <html>
